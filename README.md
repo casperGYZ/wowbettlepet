@@ -16,47 +16,82 @@
 ## 3：script
 
 if [enemy.type = 小动物]
+
 change(40)
+
 change(3139) [ self(灰猫:40).dead]
+
 endif
+
 
 if [enemy.type = 飞行]
+
 change(1601)
+
 change(3139) [ self(1601).dead]
+
 endif
+
 
 if [self(40).active & enemy.type = 小动物]
+
 use(#3) [enemy.hp<600]
+
 use(#2) 
+
 use(#1) [!ability(#2).usable]
+
 endif
+
 
 if [self(40).active & enemy.type != 小动物]
+
 use(#3) [enemy.hp<480]
+
 use(#2) 
+
 use(#1) [!ability(#2).usable]
+
 endif
+
 
 if [self(3139).active & enemy.type = 飞行]
+
 use(#3)
+
 use(#1) [!ability(#3).usable]
+
 use(#2) [!ability(#3).usable & !ability(#1).usable]
+
 standby [!ability(#3).usable & !ability(#1).usable & !ability(#2).usable]
+
 endif
 
+
 if [self(3139).active & enemy.type != 飞行]
+
 use(#1)
+
 use(#2) [!ability(#1).usable]
+
 use(#3) [!ability(#1).usable & !ability(#2).usable]
+
 standby [!ability(#3).usable & !ability(#1).usable & !ability(#2).usable]
+
 endif
+
 
 
 if [self(1601).active]
+
 use(#3) 
+
 use(#2) [!ability(#3).usable]
+
 use(#1) [!ability(#2).usable & !ability(#3).usable]
+
 endif
+
 
 ## 4.导入script
 ![image](https://user-images.githubusercontent.com/72532532/209479875-72bea96c-89ae-4107-8b3c-b401fced1b86.png)
