@@ -1,6 +1,6 @@
 # wowbettlepet
 
-准备工作：
+##准备工作：
 1：安装
   pet battle scripts
   https://www.curseforge.com/wow/addons/pet-battle-scripts
