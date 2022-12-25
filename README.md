@@ -146,4 +146,18 @@ endif
 
 解压这个zip到一个你想保留的位置
 
+提前安装各个lib
+
+![image](https://user-images.githubusercontent.com/72532532/209480567-366e83e4-4838-4eed-a398-564d1485a18e.png)
+
+![image](https://user-images.githubusercontent.com/72532532/209480575-4bd1d60d-c384-4d35-a456-27d119db1e29.png)
+
+需要安装：
+
+mss
+pyautogui
+cv2
+numpy
+
+
 
