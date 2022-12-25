@@ -13,3 +13,66 @@
   三只都要是25级蓝色等级，如果灰猫能买到加速度的最好，他的技能先攻打两次。
   灰猫和戴米多斯可以拍卖行直接买，吞噬者宝宝是噬渊抓的，遍地是，取决于想不想折腾。
   
+## 3：script
+
+if [enemy.type = 小动物]
+change(40)
+change(3139) [ self(灰猫:40).dead]
+endif
+
+if [enemy.type = 飞行]
+change(1601)
+change(3139) [ self(1601).dead]
+endif
+
+if [self(40).active & enemy.type = 小动物]
+use(#3) [enemy.hp<600]
+use(#2) 
+use(#1) [!ability(#2).usable]
+endif
+
+if [self(40).active & enemy.type != 小动物]
+use(#3) [enemy.hp<480]
+use(#2) 
+use(#1) [!ability(#2).usable]
+endif
+
+if [self(3139).active & enemy.type = 飞行]
+use(#3)
+use(#1) [!ability(#3).usable]
+use(#2) [!ability(#3).usable & !ability(#1).usable]
+standby [!ability(#3).usable & !ability(#1).usable & !ability(#2).usable]
+endif
+
+if [self(3139).active & enemy.type != 飞行]
+use(#1)
+use(#2) [!ability(#1).usable]
+use(#3) [!ability(#1).usable & !ability(#2).usable]
+standby [!ability(#3).usable & !ability(#1).usable & !ability(#2).usable]
+endif
+
+
+if [self(1601).active]
+use(#3) 
+use(#2) [!ability(#3).usable]
+use(#1) [!ability(#2).usable & !ability(#3).usable]
+endif
+
+## 4.导入script
+![image](https://user-images.githubusercontent.com/72532532/209479875-72bea96c-89ae-4107-8b3c-b401fced1b86.png)
+队伍位置放好之后选中目标点击保存，技能按照图中选择。
+
+![image](https://user-images.githubusercontent.com/72532532/209479885-abfa3be8-cae4-49e4-86bf-9fb7fe7044c7.png)
+右键保存的组然后选择write script粘贴上3中的script然后保存
+
+## 5.准备宏以及快捷键
+
+准备一个宏：
+
+/cast 复活战斗宠物
+/target 冰脊幼崽
+
+并且绑定为 '[' 键位
+
+
+设置与目标互动
