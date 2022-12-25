@@ -134,7 +134,10 @@ endif
 
 ## 7.下载
 
-下载.py文件和needle.png文件放在同一文件夹
+下载整个文件
 
+![image](https://user-images.githubusercontent.com/72532532/209480421-b013efcb-0653-4183-aecd-c616361843e9.png)
+
+解压这个zip到一个你想保留的位置
 
 
