@@ -208,9 +208,9 @@ if [self(One).active & enemy.type = 飞行]
 
 use(#2) [enemy.hp<284 & ability(#2).usable]
 
-use(#3) [ability(#3).usable]
+use(#3)
 
-use(#1) [ability(#1).usable]
+use(#1) [!ability(#3).usable]
 
 endif
 
@@ -219,9 +219,9 @@ if [self(One).active & enemy.type = 小动物]
 
 use(#2) [enemy.hp<646 & ability(#2).usable]
 
-use(#3) [ability(#3).usable]
+use(#3)
 
-use(#1) [ability(#1).usable]
+use(#1) [!ability(#3).usable]
 
 endif
 
@@ -229,9 +229,10 @@ if [self(One).active & enemy.type = 野兽]
 
 use(#2) [enemy.hp<431 & ability(#2).usable]
 
-use(#3) [ability(#3).usable]
+use(#3)
 
-use(#1) [ability(#1).usable]
+use(#1) [!ability(#3).usable]
+
 endif
 
 
