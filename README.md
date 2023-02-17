@@ -162,50 +162,82 @@ numpy
 
 
 
-## script双仆人
+## script第二只换伯爵
 
 if [enemy.type = 小动物]
 
 change(40)
 
-quit [ self(40).dead]
+change(One) [ self(40).dead]
 
 endif
+
 
 if [enemy.type = 飞行]
 
-change(One)
+change(Two)
 
-change(Two) [ self(One).dead]
-
-quit [ self(Two).dead]
+change(One) [ self(Two).dead]
 
 endif
+
 
 if [self(40).active & enemy.type = 小动物]
 
 use(#3) [enemy.hp<600]
 
-use(#2)
+use(#2) 
 
 use(#1) [!ability(#2).usable]
 
 endif
+
 
 if [self(40).active & enemy.type != 小动物]
 
 use(#3) [enemy.hp<480]
 
-use(#2)
+use(#2) 
 
 use(#1) [!ability(#2).usable]
 
 endif
 
 
+if [self(One).active & enemy.type = 飞行]
+
+use(#2) [enemy.hp<284 & ability(#2).usable]
+
+use(#3) [ability(#3).usable]
+
+use(#1) [ability(#1).usable]
+
+endif
+
+
+if [self(One).active & enemy.type = 小动物]
+
+use(#2) [enemy.hp<646 & ability(#2).usable]
+
+use(#3) [ability(#3).usable]
+
+use(#1) [ability(#1).usable]
+
+endif
+
+if [self(One).active & enemy.type = 野兽]
+
+use(#2) [enemy.hp<431 & ability(#2).usable]
+
+use(#3) [ability(#3).usable]
+
+use(#1) [ability(#1).usable]
+endif
+
+
 if [self(1601).active]
 
-use(#3)
+use(#3) 
 
 use(#2) [!ability(#3).usable]
 
