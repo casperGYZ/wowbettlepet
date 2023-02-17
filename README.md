@@ -161,3 +161,55 @@ numpy
 
 
 
+
+## script双仆人
+
+if [enemy.type = 小动物]
+
+change(40)
+
+quit [ self(40).dead]
+
+endif
+
+if [enemy.type = 飞行]
+
+change(One)
+
+change(Two) [ self(One).dead]
+
+quit [ self(Two).dead]
+
+endif
+
+if [self(40).active & enemy.type = 小动物]
+
+use(#3) [enemy.hp<600]
+
+use(#2)
+
+use(#1) [!ability(#2).usable]
+
+endif
+
+if [self(40).active & enemy.type != 小动物]
+
+use(#3) [enemy.hp<480]
+
+use(#2)
+
+use(#1) [!ability(#2).usable]
+
+endif
+
+
+if [self(1601).active]
+
+use(#3)
+
+use(#2) [!ability(#3).usable]
+
+use(#1) [!ability(#2).usable & !ability(#3).usable]
+
+endif
+
