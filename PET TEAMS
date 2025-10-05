@@ -11,4 +11,11 @@ __ Ungrouped Teams:1:J8T7::1: __
 巴库歇克06:60FE:11101S1:11105V:11201G1:
 
 
-
+巴库歇克:60FE:211839U:22272KT:ZL:
+quit [!self(#3).exists]
+use(增压:208)
+use(#3)
+use(召唤闪电:204)
+use(#1) [!enemy(#1).dead]
+change(next)
+quit
